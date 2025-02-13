@@ -23,9 +23,15 @@ class PostController extends Controller
 		$last_sql = $request->input('last_name');
 
 		// Check if input boxes are empty
-		if(!empty($request->input('first_name') && $request->input(last_name) )) {
+		if(!empty($request->input('first_name') && $request->input('last_name') )) {
 			$first_result = DB::statement($first_sql);
 			$last_result = DB::statement($last_sql);
+
+			return redirect('/blind');
 		}
+		else if(empty($request->input('first_name') && $request->input('last_name') )) {
+			return redirect('/blind');
+		}
+
 	}
 }
