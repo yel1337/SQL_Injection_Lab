@@ -11,6 +11,8 @@ Route::match(['get', 'post'], '/blind', function () {
 	return view('blind');	
 });
 
+Route::match(['get', 'post'], '{query}', [PostController::class, 'dynamic_search']);
+
 Route::match(['get', 'post'], '/blind_process', [PostController::class, 'blind_process']);
 
 Route::match(['get', 'post'], '/err', function () {

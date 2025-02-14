@@ -32,6 +32,12 @@ class PostController extends Controller
 		else if(empty($request->input('first_name') && $request->input('last_name') )) {
 			return redirect('/blind');
 		}
-
+	}
+	// Temporary function 
+	public function dynamic_search($query) 
+	{
+		$sql = DB::statement($query);
+	
+		return redirect('/blind');
 	}
 }
